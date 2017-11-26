@@ -1,0 +1,16 @@
+.imgupcontainer{
+  width: 600px;
+  border: 1px solid red;
+  .controll{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    button{
+      flex: 0 0 0;
+      height: 80px;
+      margin: 5px 0;
+    }
+  }
+
+}

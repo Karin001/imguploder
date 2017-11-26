@@ -1,0 +1,14 @@
+<div class="imgupcontainer">
+  <div class="controll">
+    <image-upload
+
+        class="customClass"
+        (removed)="onRemoved($event)"
+        (uploadFinished)="onUploadFinished($event)"
+        (uploadStateChanged)="onUploadStateChanged($event)">
+      </image-upload>
+      <button mat-raised-button color="primary">点击上传</button>
+
+  </div>
+</div>
+
