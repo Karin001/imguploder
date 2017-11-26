@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ImageUploadModule } from 'angular2-image-upload';
 import { AppComponent } from './app.component';
+import { ImgloderComponent } from './imgloder/imgloder.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ImgloderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

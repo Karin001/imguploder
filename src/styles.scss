@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.customClass {
+  background-color: #dd3;
+  border-radius: 5px;
+  margin:5px;
+  width: 500px;
+}
+
+.customClass .img-ul-upload {
+  background-color: #000 !important;
+}
+
+.customClass .img-ul-clear {
+  background-color: #617776 !important;
+}
+
+.customClass .img-ul-drag-box-msg {
+  color: #B8A2B8 !important;
+}
+
+.customClass .img-ul-container {
+  background-color: #C58AA5 !important;
+}
