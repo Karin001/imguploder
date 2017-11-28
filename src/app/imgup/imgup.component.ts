@@ -6,28 +6,30 @@ import { FileHolder } from 'angular2-image-upload';
   styleUrls: ['./imgup.component.scss']
 })
 export class ImgupComponent implements OnInit {
-
+  srcc;
+  imggroup: any[] = [];
   constructor() { }
 
   ngOnInit() {
   }
-
-  srcc;
-  imggroup: any[]=[];
+  netUpload() {
+    
+    //CALL RESTAPI POST
+  }
   onUploadFinished(file: FileHolder) {
     console.log(file);
     this.imggroup.push({
-      name:file.file.name,
-      size:file.file.size,
-      type:file.file.type,
-      src:file.src
+      name: file.file.name,
+      size: file.file.size,
+      type: file.file.type,
+      src: file.src
     });
     console.log(this.imggroup);
     this.srcc = file.src;
   }
   removeByname(arr, val) {
-    for(var i=0; i<arr.length; i++) {
-      if(arr[i].name == val) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].name == val) {
         arr.splice(i, 1);
         break;
       }

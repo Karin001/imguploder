@@ -6,7 +6,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {
   MatToolbarModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatSlideToggleModule,
 } from '@angular/material';
 import { ImgupComponent } from './imgup/imgup.component';
 import { ImgdetailComponent } from './imgdetail/imgdetail.component';
@@ -27,6 +28,7 @@ import { ImglistComponent } from './imglist/imglist.component';
     ImageUploadModule.forRoot(),
     MatToolbarModule,
     MatButtonModule,
+    MatSlideToggleModule,
     NgxDatatableModule
   ],
   providers: [],

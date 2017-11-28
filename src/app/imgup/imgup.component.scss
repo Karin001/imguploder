@@ -6,10 +6,22 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    button{
-      flex: 0 0 0;
-      height: 80px;
+    .up-button{
+      flex: 0 0 80px;
+      font-family: "微软雅黑";
+      color: white;
+      height: 86px;
       margin: 5px 0;
+      background: #97ca1f;
+      line-height: 86px;
+      text-align: center;
+      border-radius: 10%;
+      &:hover{
+        position: relative;
+        left: 5px;
+        cursor: pointer;
+      }
+
     }
   }
 

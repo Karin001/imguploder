@@ -1,4 +1,6 @@
+
 <div class="imgupcontainer">
+
   <div class="controll">
     <image-upload
 
@@ -7,7 +9,7 @@
         (uploadFinished)="onUploadFinished($event)"
         (uploadStateChanged)="onUploadStateChanged($event)">
       </image-upload>
-      <button mat-raised-button color="primary">点击上传</button>
+      <span class="up-button" (click)="netUpload()">点击上传</span>
 
   </div>
 </div>
