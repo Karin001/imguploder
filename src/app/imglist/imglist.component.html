@@ -1,7 +1,8 @@
 <div>
   <ngx-datatable
-    class="dark"
+    [ngClass]="{'dark':dackMode === true, 'material':dackMode === false}"
     [rows]="rows"
+   
     [columns]="columns">
   </ngx-datatable>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-   @Output() modeToggle = new EventEmitter<void>();
+  dackMode = false;
   changeMode() {
-    this.modeToggle.emit();
-    
+    this.dackMode = this.dackMode === false ? true : false;
+    console.log('app-dack=' + this.dackMode);
   }
 
 }

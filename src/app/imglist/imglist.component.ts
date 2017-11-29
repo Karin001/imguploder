@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
-  
+
   selector: 'app-imglist',
   templateUrl: './imglist.component.html',
   styleUrls: ['./imglist.component.scss']
@@ -17,6 +17,7 @@ export class ImglistComponent implements OnInit {
     { name: 'Gender' },
     { name: 'Company' }
   ];
+  @Input() dackMode = false;
   constructor() { }
 
   ngOnInit() {
