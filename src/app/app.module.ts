@@ -12,6 +12,7 @@ import {
 import { ImgupComponent } from './imgup/imgup.component';
 import { ImgdetailComponent } from './imgdetail/imgdetail.component';
 import { ImglistComponent } from './imglist/imglist.component';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,15 @@ import { ImglistComponent } from './imglist/imglist.component';
 
     ImgdetailComponent,
 
-    ImglistComponent
+    ImglistComponent,
+
+    KeysPipe
   ],
   imports: [
     BrowserModule,
     ImageUploadModule.forRoot(),
     MatToolbarModule,
+    MatCardModule,
     MatButtonModule,
     MatSlideToggleModule,
     NgxDatatableModule

@@ -3,5 +3,5 @@
     <mat-slide-toggle (change)="changeMode()">dark-mode</mat-slide-toggle>
 </mat-toolbar>
 <app-imgup></app-imgup>
-<app-imglist [dackMode]="dackMode"></app-imglist>
-<app-imgdetail></app-imgdetail>
+<app-imglist [dackMode]="dackMode" (select)="getSelect($event)"></app-imglist>
+<app-imgdetail [selected]="userSelect"></app-imgdetail>

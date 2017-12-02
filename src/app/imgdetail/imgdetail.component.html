@@ -1,3 +1,31 @@
 <div *ngIf="selected">
-  <p>这是 图片{{selected.name}} 的细节</p>
+  <mat-card class="img-card">
+    <mat-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <mat-card-title>标签：{{selected.tag.type || "未定义"}}
+          <button mat-button *ngIf="selected.tag.type" color="primary">修改标签</button>
+          <button mat-button *ngIf="selected.tag.type === undefined" color="primary">建立标签</button>
+
+      </mat-card-title>
+
+      <mat-card-subtitle *ngIf="selected.tag.detail">
+        <span  *ngFor=" let item of selected.tag.detail | keys" >
+          {{item.value}}
+        </span>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="selected.src" alt="">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>复制地址</button>
+      <button mat-button>分享</button>
+
+    </mat-card-actions>
+  </mat-card>
 </div>

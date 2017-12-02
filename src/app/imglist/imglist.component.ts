@@ -1,5 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, Input, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, ViewChild, TemplateRef, EventEmitter, Output } from '@angular/core';
 
+class imgInfo {
+  src: string;
+  name: string;
+  type: string;
+  tag: string[];
+  size: string
+}
 @Component({
 
   selector: 'app-imglist',
@@ -18,7 +25,7 @@ export class ImglistComponent implements OnInit {
   @Input() dackMode = false;
   rows = [];
   columns = [];
-
+  @Output() select = new EventEmitter<any>()
   constructor() {
     this.fetch((data) => {
       this.rows = data;
@@ -51,6 +58,7 @@ export class ImglistComponent implements OnInit {
   }
   onSelect({ selected }) {
     console.log('Select Event', selected);
+    this.select.emit(selected);
   }
   fetch(cb) {
     const req = new XMLHttpRequest();
