@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-imgdetail',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./imgdetail.component.scss']
 })
 export class ImgdetailComponent implements OnInit {
-
+  @Input()selected;
   constructor() { }
 
   ngOnInit() {

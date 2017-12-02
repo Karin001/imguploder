@@ -1,8 +1,31 @@
 <div>
   <ngx-datatable
     [ngClass]="{'dark':dackMode === true, 'material':dackMode === false}"
+    [headerHeight]="50"
     [rows]="rows"
-   
-    [columns]="columns">
+    [limit]="10"
+    [footerHeight]="50"
+    [rowHeight]="'50'"
+    [selectionType]="'single'"
+    [columns]="columns"
+    (select)='onSelect($event)'>
   </ngx-datatable>
+
+  <ng-template #hdrTpl let-column="column" let-sort="sortFn" >
+    <span (click)="sort()">{{column.name}} </span>
+  </ng-template>
+  <ng-template #editTmplImg let-row="row" let-value="value">
+    <img
+      height="50"
+
+      [src]="value"
+    />
+
+  </ng-template>
+  <ng-template #editTmpl let-row="row" let-value="value" class="b-con">
+
+      <span>{{value}}</span>
+
+
+  </ng-template>
 </div>
