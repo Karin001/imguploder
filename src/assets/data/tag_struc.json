@@ -1,0 +1,21 @@
+{
+  "ImgType" :[
+    {
+      "type": "anime",
+      "details": ["name", "role", "scene", "property"]
+    },
+    {
+      "type": "scenery",
+      "details": ["name", "season", "property"]
+    },
+    {
+      "type": "person",
+      "details": ["name", "sex", "scene", "property"]
+    },
+    {
+      "type": "game",
+      "details":["name", "role", "scene", "property"]
+    }
+
+  ]
+}

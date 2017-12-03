@@ -1,0 +1,25 @@
+
+    <form [formGroup]="tagModel" *ngIf="tagTypes" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-select placeholder="图片分类" formControlName="type" (change)="resetForm($event)">
+          <mat-option *ngFor="let tagType of tagTypes.ImgType" [value]="tagType.type">
+            {{ tagType.type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div formGroupName="detail">
+        <div *ngFor="let detail of details">
+          <mat-form-field *ngIf="detail !== 'sex'">
+            <input  type="text" matInput [placeholder]="detail" [formControlName]="detail" >
+          </mat-form-field>
+          <mat-radio-group  *ngIf="detail === 'sex'" [formControlName]="detail" >
+            <mat-radio-button *ngFor="let season of ['男', '女']" [value]="season">
+              {{season}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+
+      <button mat-button type="submit">确定</button>
+    </form>
