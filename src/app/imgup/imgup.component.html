@@ -3,13 +3,16 @@
 
   <div class="controll">
     <image-upload
-
+        buttonCaption="打开本地图片"
+        dropBoxMessage="拖动图片至此"
+        clearButtonCaption="清除"
         class="customClass"
         (removed)="onRemoved($event)"
         (uploadFinished)="onUploadFinished($event)"
         (uploadStateChanged)="onUploadStateChanged($event)">
       </image-upload>
-      <span class="up-button" (click)="netUpload()">点击上传</span>
+      <button mat-raised-button color="primary" (click)="netUpload()" class="up-button">上传</button>
+      
 
   </div>
 </div>

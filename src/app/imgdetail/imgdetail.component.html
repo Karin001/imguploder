@@ -3,7 +3,7 @@
     <mat-card-header>
       <div md-card-avatar class="example-header-image"></div>
       <mat-card-title>标签：{{selected.tag.type || "未定义"}}
-          <button mat-button *ngIf="selected.tag.type" color="primary">修改标签</button>
+          <button mat-button *ngIf="selected.tag.type" color="primary" (click)="openDialog()">修改标签</button>
           <button mat-button *ngIf="selected.tag.type === undefined" color="primary">建立标签</button>
 
       </mat-card-title>

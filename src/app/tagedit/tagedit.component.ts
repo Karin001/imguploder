@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit, Inject, Optional } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GetTagModelService } from '../get-tag-model.service';
+import { MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'app-tagedit',
   templateUrl: './tagedit.component.html',
@@ -8,11 +9,21 @@ import { GetTagModelService } from '../get-tag-model.service';
 })
 export class TageditComponent implements OnInit {
   tagTypes;
+  tagData;
   details = [];
+  detailType = [];
   tagModel: FormGroup;
-  constructor( private fb: FormBuilder, private gt: GetTagModelService) {
-    this.gt.getlocalModel().subscribe((data)=>{
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public tag: any,
+    private fb: FormBuilder,
+    private gt: GetTagModelService,
+
+  ) {
+    console.log(this.tag);
+    this.tagData = this.tag['tag'];
+    this.gt.getlocalModel().subscribe((data) => {
       this.tagTypes = data;
+      this.detailType = this.tagTypes['DetailType'];
       console.log(this.tagTypes);
       this.createForm();
     });
@@ -24,15 +35,15 @@ export class TageditComponent implements OnInit {
   onSubmit() {
     console.log(this.tagModel.value);
   }
-  resetForm(event){
+  resetForm(event) {
     console.log(event);
     this.createForm(event.value);
   }
-  createForm( tagtype = 'anime' ) {
+  createForm(tagtype = this.tagData['type'] || 'person') {
     let groupModel = {};
     let detailModel = {};
     this.tagTypes['ImgType'].forEach(element => {
-      if(tagtype === element['type']) {
+      if (tagtype === element['type']) {
         groupModel['type'] = element['type'];
         this.details = element['details'];
         element['details'].forEach(detail => {

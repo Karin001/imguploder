@@ -1,7 +1,7 @@
 
     <form [formGroup]="tagModel" *ngIf="tagTypes" (ngSubmit)="onSubmit()">
       <mat-form-field>
-        <mat-select placeholder="图片分类" formControlName="type" (change)="resetForm($event)">
+        <mat-select placeholder="图片分类" formControlName="type" (change)="resetForm($event)" [value]="tagData['type']">
           <mat-option *ngFor="let tagType of tagTypes.ImgType" [value]="tagType.type">
             {{ tagType.type }}
           </mat-option>
@@ -9,17 +9,24 @@
       </mat-form-field>
       <div formGroupName="detail">
         <div *ngFor="let detail of details">
-          <mat-form-field *ngIf="detail !== 'sex'">
-            <input  type="text" matInput [placeholder]="detail" [formControlName]="detail" >
+          <mat-form-field *ngIf="detailType[detail]['prop'] === 'text'">
+            <input  type="text" matInput [placeholder]="detail" [formControlName]="detail" [value]="tagData['detail'][detail]" >
           </mat-form-field>
-          <mat-radio-group  *ngIf="detail === 'sex'" [formControlName]="detail" >
-            <mat-radio-button *ngFor="let season of ['男', '女']" [value]="season">
-              {{season}}
+          <mat-radio-group *ngIf="detailType[detail]['prop'] === 'radio'" [formControlName]="detail" [value]="tagData['detail'][detail]">
+            <mat-radio-button class="padding30" *ngFor="let item of detailType[detail]['values']" [value]="item">
+              {{item}}
             </mat-radio-button>
           </mat-radio-group>
+          <mat-form-field *ngIf="detailType[detail]['prop'] === 'multi'">
+            <mat-select placeholder="detail" multiple="true" [value]="tagData['detail'][detail]">
+              <mat-option *ngFor="let item of detailType[detail]['values']" [value]="item">
+                {{ item }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
       </div>
 
 
-      <button mat-button type="submit">确定</button>
+      <button mat-raised-button color="primary" type="submit">确定</button>
     </form>

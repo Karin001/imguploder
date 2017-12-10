@@ -4,7 +4,7 @@
     "type": "jpg",
     "name": "1",
     "size": "123k",
-    "tag": {"type": "anime", "detail": {"name":"灌篮高手", "role": ["湘北篮球队"]} }
+    "tag": {"type": "anime", "detail": {"name":"灌篮高手", "role": ["湘北篮球队"], "property": ["热血", "少年"]} }
   },
   {
     "src": "../../assets/fakeimg/2.jpg",
@@ -81,7 +81,7 @@
     "type": "jpg",
     "name": "12",
     "size": "123k",
-    "tag": {"type": "anime", "detail": {"name":"灌篮高手", "role": ["宫城", "樱木"]} }
+    "tag": {"type": "anime", "detail": {"name":"灌篮高手", "role": ["宫城", "樱木"]}, "property": ["热血", "少年"] }
   },
   {
     "src": "../../assets/fakeimg/13.jpg",

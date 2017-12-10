@@ -1,5 +1,5 @@
 {
-  "ImgType" :[
+  "ImgType": [
     {
       "type": "anime",
       "details": ["name", "role", "scene", "property"]
@@ -17,5 +17,14 @@
       "details":["name", "role", "scene", "property"]
     }
 
-  ]
+  ],
+  "DetailType": {
+    "name": { "prop": "text"},
+    "sex": { "prop": "radio", "values": [ "男", "女"]},
+    "role": { "prop": "text"},
+    "property": { "prop": "multi","values":[ "热血", "少女", "恋爱", "运动", "冷酷", "少年"]},
+    "season": { "prop": "radio", "values": [ "春", "夏", "秋", "冬" ]},
+    "scene": { "prop": "text"}
+  }
+  
 }

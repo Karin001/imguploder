@@ -1,0 +1,13 @@
+<h2>管理您的标签</h2>
+<div >
+  <h3>您现有的标签如下</h3>
+  <div class="tagbox">
+    <mat-chip-list>
+      <mat-chip (click)="manege(tag)" color="primary" *ngFor="let tag of tagTypes">
+        <a [routerLink]="['/tag/', tag.type]">{{tag.type}}</a>
+      </mat-chip>
+    </mat-chip-list>
+</div>
+<button mat-raised-button color="primary">new一个</button>
+<div></div>
+

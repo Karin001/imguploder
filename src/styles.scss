@@ -4,25 +4,25 @@
 @import '~@swimlane/ngx-datatable/release/themes/dark.css';
 @import '~@swimlane/ngx-datatable/release/themes/material.css';
 @import '~@swimlane/ngx-datatable/release/assets/icons.css';
+a {
+  text-decoration: none;
+
+}
 .customClass {
-  background-color: #C5E47D;
-  border-radius: 5px;
   margin:5px;
   width: 500px;
 }
 
 .customClass .img-ul-upload {
-  background-color: #000 !important;
+  background-color: #4b67e6 !important;
 }
 
 .customClass .img-ul-clear {
-  background-color: #617776 !important;
+  background-color: #b4ddf0 !important;
 }
 
 .customClass .img-ul-drag-box-msg {
-  color: #B8A2B8 !important;
+  color: #b4ddf0 !important;
 }
 
-.customClass .img-ul-container {
-  background-color: #C58AA5 !important;
-}
+

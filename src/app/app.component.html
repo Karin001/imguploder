@@ -1,8 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
     <mat-slide-toggle (change)="changeMode()">dark-mode</mat-slide-toggle>
+    <a routerLink="/imgview"><button mat-button>图片列表</button></a>
+    <a routerLink="/tagmanege"><button mat-button>标签管理</button></a>
+    <a routerLink="/imgup"><button mat-button>图片上传</button></a>
 </mat-toolbar>
-<!-- <app-imgup></app-imgup>
-<app-imglist [dackMode]="dackMode" (select)="getSelect($event)"></app-imglist>
-<app-imgdetail [selected]="userSelect"></app-imgdetail> -->
-<app-tagedit></app-tagedit>
+<div *ngFor="let item of c">
+    <span *ngIf="b[item] === '123'">yes</span>
+</div>
+
+
+<router-outlet></router-outlet>
