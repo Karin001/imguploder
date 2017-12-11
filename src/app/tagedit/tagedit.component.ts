@@ -26,6 +26,7 @@ export class TageditComponent implements OnInit {
       this.detailType = this.tagTypes['DetailType'];
       console.log(this.tagTypes);
       this.createForm();
+      console.log(4);
     });
   }
 
@@ -37,22 +38,39 @@ export class TageditComponent implements OnInit {
   }
   resetForm(event) {
     console.log(event);
-    this.createForm(event.value);
+    this.createForm(event.value, true);
   }
-  createForm(tagtype = this.tagData['type'] || 'person') {
-    let groupModel = {};
-    let detailModel = {};
+  createForm(tagtype = this.tagData['type'] || 'person', reset: boolean = false) {
+    const groupModel = {};
+    const detailModel = {};
+    let temp;
+    const temp2 = [];
+    const temp3 = [];
     this.tagTypes['ImgType'].forEach(element => {
       if (tagtype === element['type']) {
         groupModel['type'] = element['type'];
         this.details = element['details'];
         element['details'].forEach(detail => {
-          detailModel[detail] = '';
+          temp2.push(detail);
+          temp3.push(this.tagData['detail'][detail]);
+          temp = this.detailType[detail]['prop'] === 'multi' ? [''] : '';
+          console.log('start');
+          console.log(temp);
+          detailModel[detail] = temp;
         });
+        console.log(0);
+        console.log(detailModel);
         groupModel['detail'] = this.fb.group(detailModel);
+        if (!reset) {
+          for (let index = 0; index < temp2.length; index++) {
+            groupModel['detail'].controls[temp2[index]].setValue(temp3[index]);
+          }
+        }
       }
     });
     this.tagModel = this.fb.group(groupModel);
+    console.log('表单group对象如下');
+    console.log(this.tagModel);
   }
 
 }

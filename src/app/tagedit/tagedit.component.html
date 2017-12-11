@@ -10,15 +10,15 @@
       <div formGroupName="detail">
         <div *ngFor="let detail of details">
           <mat-form-field *ngIf="detailType[detail]['prop'] === 'text'">
-            <input  type="text" matInput [placeholder]="detail" [formControlName]="detail" [value]="tagData['detail'][detail]" >
+            <input  type="text" matInput [placeholder]="detail" [formControlName]="detail" >
           </mat-form-field>
-          <mat-radio-group *ngIf="detailType[detail]['prop'] === 'radio'" [formControlName]="detail" [value]="tagData['detail'][detail]">
+          <mat-radio-group *ngIf="detailType[detail]['prop'] === 'radio'" [formControlName]="detail" >
             <mat-radio-button class="padding30" *ngFor="let item of detailType[detail]['values']" [value]="item">
               {{item}}
             </mat-radio-button>
           </mat-radio-group>
           <mat-form-field *ngIf="detailType[detail]['prop'] === 'multi'">
-            <mat-select placeholder="detail" multiple="true" [value]="tagData['detail'][detail]">
+            <mat-select [placeholder]="detail" multiple="true" [formControlName]="detail">
               <mat-option *ngFor="let item of detailType[detail]['values']" [value]="item">
                 {{ item }}
               </mat-option>
