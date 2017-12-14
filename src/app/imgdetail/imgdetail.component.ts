@@ -26,4 +26,6 @@ export class ImgdetailComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+
 }

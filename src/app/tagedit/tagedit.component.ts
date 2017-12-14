@@ -66,6 +66,7 @@ export class TageditComponent implements OnInit {
             groupModel['detail'].controls[temp2[index]].setValue(temp3[index]);
           }
         }
+        return;
       }
     });
     this.tagModel = this.fb.group(groupModel);

@@ -18,6 +18,7 @@ import {
   MatInputModule,
   MatRadioModule,
   MatChipsModule,
+  MatTabsModule,
 } from '@angular/material';
 import { ImgupComponent } from './imgup/imgup.component';
 import { ImgdetailComponent } from './imgdetail/imgdetail.component';
@@ -32,8 +33,15 @@ import { ImgviewComponent } from './imgview/imgview.component';
 const routes: Routes = [
   { path: '', redirectTo: '/imgview', pathMatch: 'full' },
   { path: 'imgview', component: ImgviewComponent, pathMatch: 'full' },
-  { path: 'tagmanege', component: TagmanegeComponent, pathMatch: 'full'},
-  { path: 'imgup', component: ImgupComponent, pathMatch: 'full'},
+  {
+    path: 'tagmanege', component: TagmanegeComponent,
+    children: [
+      {
+        path: ':tagname', component: TagdetailComponent, pathMatch: 'full'
+      }
+    ]
+  },
+  { path: 'imgup', component: ImgupComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -70,7 +78,7 @@ const routes: Routes = [
     MatInputModule,
     MatRadioModule,
     MatChipsModule,
-    MatStepperModule,
+    MatTabsModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
