@@ -1,21 +1,21 @@
 
 <div *ngIf="selectedTagDetail" (click)="closeForm()">
   <h2>{{selectedTagName}}</h2>
-  
-  <mat-tab-group (selectedTabChange)="modify($event)">
+
+  <mat-tab-group (selectedTabChange)="renderSelectedTabLabel()" #tabGroup>
     <mat-tab *ngFor="let detail of selectedTagDetail" [label]="detail">
         <div *ngIf="modifyOn">
             <div>
               <h3>prop:{{detailDefin['prop']}}</h3>
               <div *ngIf="detailDefin['values']">
                 <h3>values</h3>
-                <button mat-button>增加属性</button> 
+                <button mat-button>增加属性</button>
                 <div class="value-list" *ngFor="let value of detailDefin['values']">
                   <span (click)="valueModifyToggle($event, value)">{{value}}</span>
-                  <button *ngIf="valueModifyOn === value" mat-button (click)="ensureModify($event, value)">删除</button>
-                  
-                    
-                </div>    
+                  <button *ngIf="valueModifyOn === value" color="primary"  (click)="ensureModify($event, value)">删除</button>
+
+
+                </div>
                 <button mat-raised-button color="primary">保存更改</button>
                 <button mat-raised-button  color="primary">作罢！</button>
               </div>
